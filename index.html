@@ -148,6 +148,23 @@
         margin: 0;
         font-size: 0.95rem;
       }
+      @media (max-width: 900px) {
+        .committee .grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+      @media (max-width: 600px) {
+        .committee .grid {
+          grid-template-columns: 1fr;
+        }
+        .committee .card {
+          text-align: center;
+        }
+        .member-photo {
+          max-width: 220px;
+          margin: 0 auto 10px;
+        }
+      }
       .member-photo {
         width: 100%;
         aspect-ratio: 1 / 1;
