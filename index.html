@@ -1,140 +1,620 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
-    
-    <!-- SEO Meta Tags -->
-    <title>Àlex Valverde Valencia</title>
-    <meta name="description" content="Àlex Valverde Valencia - PhD candidate at UPF, researching Human-AI creative processes AI Literacy.">
-    
-    <!-- Open Graph / Social Media -->
-    <meta property="og:title" content="Àlex Valverde Valencia">
-    <meta property="og:description" content="PhD candidate at UPF, researching Human-AI creative processes and AI Literacy. ">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://valvevalen.github.io">
-    
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Àlex Valverde Valencia">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>International Symposium | Human-AI Creative Workflows</title>
+    <meta name="description" content="International Online Symposium on Human-AI Creative Workflows — June 1, 2026. Free, online. Preliminary programme now available." />
+    <link rel="icon" type="image/png" sizes="32x32" href="Favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="Favicon/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="Favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="Favicon/site.webmanifest" />
+    <style>
+      :root {
+        color-scheme: light;
+        --card: #ffffff;
+        --text: #0b0b0b;
+        --muted: #5b5b5b;
+        --accent:   #e21f79;
+        --accent-2: #5624c5;
+        --accent-3: #ce18bc;
+        --accent-soft: #ff8c8c;
+        --border: #e5e7eb;
+      }
 
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-    <nav class="nav-menu">
-        <a href="#research">Research</a>
-        <a href="#teaching">Teaching</a>
+      /* Scroll progress bar */
+      #scroll-progress {
+        position: fixed; top: 0; left: 0;
+        height: 3px; width: 0%;
+        background: linear-gradient(90deg, var(--accent) 0%, var(--accent-2) 100%);
+        z-index: 9999; transition: width 0.08s linear; pointer-events: none;
+      }
+
+      *, *::before, *::after { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: var(--text); background: #f8fafc; line-height: 1.5;
+      }
+
+      h1, h2, h3 { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; letter-spacing: 0.01em; }
+      a { color: var(--accent); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+
+      /* ── Banner ── */
+      .banner-wrap {
+        padding: 28px 40px 0;
+        background: #ffffff;
+      }
+      .banner-wrap .inner {
+        max-width: 860px;
+        margin: 0 auto;
+      }
+      .banner-wrap img {
+        width: 100%; height: auto; display: block;
+        border-radius: 14px; border: 1px solid var(--border);
+        box-shadow: 0 12px 28px rgba(15,23,42,0.14);
+      }
+
+      /* ── Nav ── */
+      nav {
+        background: #ffffff; border-bottom: 1px solid var(--border);
+        box-shadow: 0 4px 10px rgba(15,23,42,0.08);
+        position: sticky; top: 0; z-index: 20;
+      }
+      nav .wrap {
+        max-width: 980px; margin: 0 auto; padding: 14px 20px;
+        display: flex; gap: 24px; flex-wrap: wrap; justify-content: center;
+      }
+      nav a {
+        color: var(--accent-2); font-weight: 600;
+        text-transform: uppercase; letter-spacing: 0.08em;
+        font-size: 0.85rem; padding: 6px 4px; transition: color 0.2s;
+        white-space: nowrap;
+      }
+      nav a:hover { color: var(--accent); text-decoration: none; }
+
+      /* ── CTAs ── */
+      .cta {
+        display: inline-block; background: var(--accent-2); color: #fff;
+        padding: 13px 26px; border-radius: 6px; font-weight: 700;
+        font-size: 1rem; transition: background 0.2s, transform 0.15s;
+      }
+      .cta:hover { background: var(--accent); text-decoration: none; transform: translateY(-1px); }
+      .cta-secondary {
+        display: inline-block; background: transparent; color: var(--accent-2);
+        padding: 11px 22px; border-radius: 6px; font-weight: 600; font-size: 0.95rem;
+        border: 2px solid var(--accent-2); margin-left: 10px;
+        transition: background 0.2s, color 0.2s;
+      }
+      .cta-secondary:hover { background: var(--accent-2); color: #fff; text-decoration: none; }
+      .cta-wrap { margin-top: 20px; }
+
+      /* ── Main ── */
+      main { max-width: 980px; margin: 0 auto; padding: 32px 20px 48px; }
+      section { margin-bottom: 28px; padding-top: 18px; border-top: 1px solid var(--border); }
+      section:first-of-type { border-top: 0; padding-top: 0; }
+      .section-divider { height: 1px; background: var(--border); border: 0; margin: 28px 0; }
+
+      h2 { margin: 0 0 16px; font-size: 1.4rem; color: var(--accent); }
+
+      /* ── About section two-column ── */
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 340px;
+        gap: 2.5rem;
+        align-items: start;
+      }
+      .section-eyebrow {
+        display: block; font-size: 0.72rem; font-weight: 700;
+        letter-spacing: 0.14em; text-transform: uppercase;
+        color: var(--accent); margin-bottom: 0.5rem;
+      }
+      .about-title {
+        font-size: clamp(1.7rem, 3.5vw, 2.3rem);
+        font-weight: 800; color: var(--text);
+        line-height: 1.15; margin: 0 0 1.1rem;
+      }
+      .about-body > p {
+        color: var(--muted); font-size: 0.95rem;
+        line-height: 1.7; margin-bottom: 0.85rem;
+      }
+      .about-aside { display: flex; flex-direction: column; gap: 10px; }
+
+      /* ── Cards / general ── */
+      .card {
+        background: var(--card); border: 1px solid var(--border);
+        border-radius: 10px; padding: 16px; box-shadow: 0 6px 16px rgba(15,23,42,0.06);
+      }
+      .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); }
+
+      /* ── Countdown ── */
+      .countdown-box {
+        background: linear-gradient(135deg,#fdf2f8 0%,#f0ebff 100%);
+        border: 1px solid #f0c0dc; border-radius: 14px;
+        padding: 20px; text-align: center;
+      }
+      .cd-label-top { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 10px; }
+      .cd-units { display: flex; justify-content: center; gap: 4px; flex-wrap: wrap; }
+      .cd-unit { min-width: 54px; text-align: center; }
+      .cd-num { display: block; font-size: 2rem; font-weight: 800; line-height: 1; color: var(--accent); font-variant-numeric: tabular-nums; }
+      .cd-unit-label { display: block; font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-top: 3px; }
+      .cd-sep { font-size: 1.6rem; font-weight: 300; color: #ddd; line-height: 1.1; align-self: flex-start; padding-top: 4px; }
+
+      /* ── Info items ── */
+      .info-item {
+        background: #fff; border: 1px solid var(--border);
+        border-left: 4px solid var(--accent); border-radius: 8px;
+        padding: 10px 14px; font-size: 0.9rem;
+      }
+      .info-item.purple { border-left-color: var(--accent-2); }
+      .info-item strong {
+        display: block; font-size: 0.68rem; text-transform: uppercase;
+        letter-spacing: 0.08em; color: var(--muted); margin-bottom: 2px; font-weight: 700;
+      }
+
+      /* ── Registration ── */
+      .reg-card {
+        background: linear-gradient(135deg,#fdf2f8 0%,#f0ebff 100%);
+        border: 1px solid #e8d0f0; border-radius: 14px; padding: 24px;
+      }
+      .reg-card p { margin: 0 0 8px; }
+
+      /* ── Schedule table ── */
+      .schedule-wrap { border-radius: 10px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 6px 16px rgba(15,23,42,0.06); margin-bottom: 28px; overflow-x: auto; }
+      .schedule-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; min-width: 420px; }
+      .schedule-table th {
+        background: #f0ebff; color: var(--accent-2); font-size: 0.72rem;
+        text-transform: uppercase; letter-spacing: 0.08em;
+        padding: 8px 12px; text-align: left; font-weight: 700;
+        border-bottom: 2px solid var(--accent-2);
+      }
+      .schedule-table td { padding: 8px 12px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+      .schedule-table tr:last-child td { border-bottom: none; }
+      .schedule-table tr.break-row td { color: var(--muted); background: #fafafa; }
+      .schedule-table tr.break-row td:not(.time-cell) { font-style: italic; }
+      .time-cell { font-weight: 700; color: var(--accent); white-space: nowrap; font-style: normal; }
+      .panel-badge {
+        display: inline-block; padding: 2px 9px; border-radius: 100px;
+        font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+        letter-spacing: 0.05em; margin-right: 6px;
+      }
+      .badge-a { background: #fce8f3; color: var(--accent); }
+      .badge-b { background: #ede8ff; color: var(--accent-2); }
+      .badge-c { background: #fce8fb; color: var(--accent-3); }
+      .badge-open { background: #f0f0f0; color: #444; }
+
+      /* ── Panel blocks ── */
+      .panel-section { margin-bottom: 24px; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 4px 14px rgba(15,23,42,0.06); }
+      .panel-header { padding: 16px 20px; display: flex; align-items: center; gap: 14px; }
+      .panel-header.hdr-a { background: linear-gradient(135deg,#e21f79 0%,#ff6eb0 100%); }
+      .panel-header.hdr-b { background: linear-gradient(135deg,#5624c5 0%,#9b6dff 100%); }
+      .panel-header.hdr-c { background: linear-gradient(135deg,#ce18bc 0%,#ff6ef0 100%); }
+      .panel-letter-badge {
+        width: 48px; height: 48px; border-radius: 50%;
+        background: rgba(255,255,255,0.2); border: 2px solid rgba(255,255,255,0.5);
+        display: flex; align-items: center; justify-content: center;
+        font-size: 1.4rem; font-weight: 800; color: #fff; flex-shrink: 0;
+      }
+      .panel-hdr-text { flex: 1; }
+      .panel-time-line { font-size: 0.75rem; font-weight: 600; color: rgba(255,255,255,0.75); margin-bottom: 2px; }
+      .panel-title-line { font-size: 1.05rem; font-weight: 700; color: #fff; line-height: 1.2; }
+      .panel-chair-line { font-size: 0.78rem; color: rgba(255,255,255,0.7); margin-top: 2px; }
+      .panel-papers-list { background: #fff; }
+
+      /* ── Paper toggles ── */
+      .paper-row { border-bottom: 1px solid var(--border); }
+      .paper-row:last-child { border-bottom: none; }
+      .paper-toggle {
+        width: 100%; text-align: left; background: none; border: none;
+        padding: 13px 20px 13px 14px; cursor: pointer;
+        display: flex; align-items: flex-start; gap: 10px;
+        transition: background 0.15s;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
+      .paper-toggle:hover { background: #fdf6fa; }
+      .paper-index { font-size: 0.7rem; font-weight: 700; color: var(--muted); min-width: 22px; margin-top: 3px; }
+      .paper-inner { flex: 1; }
+      .paper-title-text { font-size: 0.92rem; font-weight: 600; color: var(--text); line-height: 1.35; display: block; margin-bottom: 3px; }
+      .paper-author-text { font-size: 0.8rem; color: var(--muted); }
+      .paper-chevron { font-size: 0.7rem; color: var(--muted); margin-top: 4px; flex-shrink: 0; transition: transform 0.25s; }
+      .paper-toggle[aria-expanded="true"] .paper-chevron { transform: rotate(180deg); }
+      .paper-abstract-body {
+        display: none; padding: 0 20px 14px 46px;
+        font-size: 0.86rem; color: var(--muted); line-height: 1.65;
+        background: #fdf8fc; border-top: 1px dashed var(--border);
+      }
+      .paper-abstract-body.open { display: block; }
+
+      /* ── Committee ── */
+      .committee {
+        background: rgba(255,140,140,0.18); border: 1px solid rgba(255,140,140,0.3);
+        border-radius: 14px; padding: 18px;
+      }
+      .committee .grid { grid-template-columns: repeat(5,minmax(0,1fr)); gap: 12px; }
+      .committee .card { background: #fff; border-color: rgba(0,0,0,0.08); padding: 12px; }
+      .committee .card h3 { margin: 0 0 6px; font-size: 1rem; }
+      .committee .card p { margin: 0; font-size: 0.9rem; color: var(--muted); }
+      .member-photo { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 10px; border: 1px solid rgba(0,0,0,0.08); margin-bottom: 8px; }
+
+      /* ── Misc ── */
+      .muted { color: var(--muted); }
+      .references { font-size: 0.9rem; line-height: 1.5; }
+      .references li { margin-bottom: 6px; }
+      footer { border-top: 1px solid var(--border); padding: 18px 20px 32px; text-align: center; color: var(--muted); font-size: 0.9rem; }
+
+      /* ── Responsive ── */
+      @media (max-width: 780px) {
+        .about-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+        .committee .grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      }
+      @media (max-width: 600px) {
+        .banner-wrap { padding: 16px 16px 0; }
+        nav { position: static; }
+        nav .wrap { padding: 10px 14px; gap: 10px; justify-content: space-around; }
+        nav a { font-size: 0.75rem; letter-spacing: 0.05em; padding: 4px 2px; }
+        main { padding: 20px 14px 40px; }
+        .about-title { font-size: 1.7rem; }
+        .cta { padding: 11px 20px; font-size: 0.9rem; }
+        .cta-secondary { padding: 9px 16px; font-size: 0.85rem; margin-left: 6px; }
+        .committee .grid { grid-template-columns: 1fr; }
+        .committee .card { text-align: center; }
+        .member-photo { max-width: 200px; margin: 0 auto 10px; }
+        .panel-header { padding: 12px 14px; gap: 10px; }
+        .panel-letter-badge { width: 40px; height: 40px; font-size: 1.15rem; }
+        .panel-title-line { font-size: 0.95rem; }
+        .paper-toggle { padding: 11px 14px 11px 10px; }
+        .paper-abstract-body { padding: 0 14px 12px 36px; }
+        .cd-num { font-size: 1.7rem; }
+        .cd-unit { min-width: 46px; }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="scroll-progress"></div>
+
+    <!-- Banner -->
+    <div class="banner-wrap">
+      <div class="inner">
+        <img src="Foto banner/Banner.png?v=2" alt="International Symposium on Human-AI Creative Workflows" />
+      </div>
+    </div>
+
+    <!-- Nav -->
+    <nav>
+      <div class="wrap">
+        <a href="#about">About</a>
+        <a href="#programme">Programme</a>
+        <a href="#committee">Committee</a>
+        <a href="#contact">Contact</a>
+      </div>
     </nav>
+
     <main>
-        <h1>Àlex Valverde Valencia</h1>
-        <div class="profile">
-            <div class="bio">
-                <p>PhD Researcher on Human-AI creative processes and AI Literacy at UPF's Communication Department. Professor on Semiotics, Digital Society and Audiovisual Creation with Generative AI. Trainer on superior teaching and learning innovation. Former coordinator of the <a href="https://www.upf.edu/web/rainfilmfest" target="_blank" rel="noopener noreferrer">+RAIN Film Festival</a>, the first AI film festival in Europe.</p>
-                <p>High performance athlete running 400m and 400m hurdles.</p>
-                <p>Barcelona based.</p>
+
+      <!-- ── ABOUT ── -->
+      <section id="about">
+        <div class="about-grid">
+          <div class="about-body">
+            <span class="section-eyebrow">International Online Symposium · June 1, 2026</span>
+            <h2 class="about-title">Human–AI<br>Creative Workflows</h2>
+            <p>The growing complexity arising from the integration of Generative AI into creative practices requires equally complex theoretical, conceptual, and methodological approaches across disciplines. This symposium brings together scholars, professionals and creative practitioners who study Human–AI creative workflows.</p>
+            <p>Spanning from different fields and areas, the symposium will present research papers examining how AI reshapes authorship, agency, labour, and creative processes. The symposium takes place fully online on <strong>June 1, 2026</strong> and is free to attend.</p>
+            <p>Organized by scholars from Pompeu Fabra University (Barcelona), University College London, and the University of Amsterdam.</p>
+            <div class="cta-wrap">
+              <a class="cta" href="https://forms.gle/VHatEC32gzyHnidT7" target="_blank" rel="noopener noreferrer">Register Free</a>
+              <a class="cta-secondary" href="#programme">View Programme ↓</a>
             </div>
-            <img src="img/profile.webp" alt="Foto de perfil" class="profile-img circular-image">
+          </div>
+          <div class="about-aside">
+            <div class="countdown-box">
+              <div class="cd-label-top">Symposium starts in</div>
+              <div class="cd-units">
+                <div class="cd-unit"><span class="cd-num" id="cd-d">--</span><span class="cd-unit-label">Days</span></div>
+                <span class="cd-sep">:</span>
+                <div class="cd-unit"><span class="cd-num" id="cd-h">--</span><span class="cd-unit-label">Hours</span></div>
+                <span class="cd-sep">:</span>
+                <div class="cd-unit"><span class="cd-num" id="cd-m">--</span><span class="cd-unit-label">Min</span></div>
+                <span class="cd-sep">:</span>
+                <div class="cd-unit"><span class="cd-num" id="cd-s">--</span><span class="cd-unit-label">Sec</span></div>
+              </div>
+            </div>
+            <div class="info-item"><strong>Date</strong>Monday, June 1, 2026 · 11:15 CET</div>
+            <div class="info-item purple"><strong>Format</strong>100% Online · Synchronous · Free</div>
+            <div class="info-item"><strong>Certificate</strong>Available on request</div>
+            <div class="info-item purple"><strong>Language</strong>English</div>
+            <div class="info-item"><strong>Zoom Link</strong>The link to join will be sent to registered participants before the event.</div>
+          </div>
         </div>
-        
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/valverdevalencia/" target="_blank" rel="noopener noreferrer">LinkedIn</a> /
-            <a href="https://x.com/valvevalen" target="_blank" rel="noopener noreferrer">Twitter/X</a> /
-            <a href="https://scholar.google.com/citations?hl=ca&user=aWdKfpoAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a> /
-            <a href="mailto:alex.valverde@upf.edu">Email</a>
+      </section>
+
+      <hr class="section-divider" />
+
+      <!-- ── PROGRAMME ── -->
+      <section id="programme">
+        <h2>Programme</h2>
+        <p><i>Subject to changes, all hours are in CET.</i></p>
+        <div class="schedule-wrap">
+          <table class="schedule-table">
+            <thead><tr><th>Time (CET)</th><th>Session</th></tr></thead>
+            <tbody>
+              <tr><td class="time-cell">11:15</td><td><span class="panel-badge badge-open">Opening</span>Opening Words — Àlex Valverde-Valencia <span class="muted" style="font-size:0.82em">(15 min)</span></td></tr>
+              <tr><td class="time-cell">11:30</td><td><span class="panel-badge badge-a">Panel A</span>Creativity, Art and New Workflows <span class="muted" style="font-size:0.82em">(60 + 20 min Q&amp;A)</span></td></tr>
+              <tr class="break-row"><td class="time-cell" style="color:var(--muted)">12:50</td><td>40-Minute Lunch Break</td></tr>
+              <tr><td class="time-cell">13:30</td><td><span class="panel-badge badge-b">Panel B</span>Industry, Labour and Distributed Agencies <span class="muted" style="font-size:0.82em">(60 + 20 min Q&amp;A)</span></td></tr>
+              <tr class="break-row"><td class="time-cell" style="color:var(--muted)">14:50</td><td>10-Minute Break</td></tr>
+              <tr><td class="time-cell">15:00</td><td><span class="panel-badge badge-c">Panel C</span>Authorship, Resistance and Learning <span class="muted" style="font-size:0.82em">(60 + 20 min Q&amp;A)</span></td></tr>
+              <tr><td class="time-cell">16:20</td><td><span class="panel-badge badge-open">Discussion</span>Community Discussion — All participants <span class="muted" style="font-size:0.82em">(30 min)</span></td></tr>
+              <tr><td class="time-cell">16:50</td><td><span class="panel-badge badge-open">Closing</span>Closing Remarks — Organising Committee</td></tr>
+            </tbody>
+          </table>
         </div>
 
-        <h2 id="research">Research</h2>
-        <div class="content">
-            <div class="paper">
-                <h3 class="paper-title">
-                    <span class="tag-new">[NEW]</span> <a href="https://raco.cat/index.php/Hipertext/article/view/9800248" target="_blank" rel="noopener noreferrer">Introducing the concept of relational processes in Human-AI creativity</a>
-                </h3>
-                <div class="paper-authors">Àlex Valverde-Valencia</div>
-                <div class="paper-meta">Hipertext.net, n.31, 2025</div>
-                <div class="paper-description">
-                    Theoretical contribution conceptualizing relational processes in creativity as mutual influence processes in which Human and AI actors collaborate iteratively, sharing their agency and reciprocally modeling their behavior, knowledge structures, and affective responses.
-                </div>
-            </div>
+        <p class="muted" style="font-size:0.82rem;margin-bottom:20px">Click any paper title to read the abstract.</p>
 
-            <div class="paper">
-                <h3 class="paper-title">
-                    <a href="https://www.editorialuoc.com/la-democracia-en-riesgo" target="_blank" rel="noopener noreferrer">Extrema derecha, deepfakes y (fan)propaganda memética generada con Inteligencia Artificial</a>
-                </h3>
-                <div class="paper-authors">Àlex Valverde-Valencia, Frederic Guerrero-Solé y Mar Guerrero-Pico</div>
-                <div class="paper-meta">La democracia en riesgo ¿Internet e IA al servicio de los populismos? Eds. Frederic Guerrero-Solé y Laura Pérez-Altable. Editorial UOC, 2025</div>
-                <div class="paper-description">
-                    Book chapter exploring the use of Generative AI by right wing populism in Spain and the sociopolitical implications of this use in terms of audience participation and extremist ideological dissemination.
-                </div>
+        <!-- PANEL A -->
+        <div class="panel-section">
+          <div class="panel-header hdr-a">
+            <div class="panel-letter-badge">A</div>
+            <div class="panel-hdr-text">
+              <div class="panel-time-line">11:30–12:50 CET &nbsp;·&nbsp; Chair: Szilvia Ruszev (UCL)</div>
+              <div class="panel-title-line">Creativity, Art and New Workflows</div>
             </div>
-
-            <div class="paper">
-                <h3 class="paper-title">
-                    <a href="https://www.raco.cat/index.php/Hipertext/article/view/413229" target="_blank" rel="noopener noreferrer">Self-effects in AI-mediated communication</a>
-                </h3>
-                <div class="paper-authors">Àlex Valverde Valencia</div>
-                <div class="paper-meta">Hipertext.net, n.26, 2023</div>
-                <div class="paper-description">
-                    A first conceptualization of the possible cognitive, emotional and behavioral self-effects that messages have on the senders themselves in the context of AI-mediated communication, with implications for digital well-being.
-                </div>
+          </div>
+          <div class="panel-papers-list">
+            <div class="paper-row">
+              <button class="paper-toggle" aria-expanded="false" onclick="toggleAbs(this)">
+                <span class="paper-index">#1</span>
+                <span class="paper-inner">
+                  <span class="paper-title-text">The When of Art? Human–AI Creative Workflows and the Conditions of Artistic Legitimacy</span>
+                  <span class="paper-author-text">Hernán Gabriel Borisonik · UNSAM–CONICET</span>
+                </span>
+                <span class="paper-chevron">▼</span>
+              </button>
+              <div class="paper-abstract-body">This paper argues that current debates on Human–AI creativity overlook a crucial temporal and operational dimension: the question of <em>when</em>, under what conditions, and through which sequences of mediation an output becomes legible as art. Drawing on Rancière, Steyerl, Wark, and Parikka, it proposes rethinking artistic legitimacy as an effect of workflows rather than an intrinsic property of objects or intentions.</div>
             </div>
+            <div class="paper-row">
+              <button class="paper-toggle" aria-expanded="false" onclick="toggleAbs(this)">
+                <span class="paper-index">#2</span>
+                <span class="paper-inner">
+                  <span class="paper-title-text">Loss of Control in the Editing Process</span>
+                  <span class="paper-author-text">Daria Shliakhta · Film University Babelsberg, Germany</span>
+                </span>
+                <span class="paper-chevron">▼</span>
+              </button>
+              <div class="paper-abstract-body">This paper examines unintentional creative discovery and distributed authorship in film editing through practice-based master's research at the Film University Babelsberg, using artificial intelligence to stage serendipitous outcomes in the cutting room. It models a chained Human–AI workflow—cuts, interpretation into a prompt, and a second generative pass—with minimal steering, reflecting on productive chance and how co-creation with AI renegotiates editorial control.</div>
+            </div>
+            <div class="paper-row">
+              <button class="paper-toggle" aria-expanded="false" onclick="toggleAbs(this)">
+                <span class="paper-index">#3</span>
+                <span class="paper-inner">
+                  <span class="paper-title-text">When Design Becomes a Conversation: Vibe Coding and AI-Mediated Design Practices</span>
+                  <span class="paper-author-text">Aliz Szőke-Vajas · Babeș-Bolyai University</span>
+                </span>
+                <span class="paper-chevron">▼</span>
+              </button>
+              <div class="paper-abstract-body">This paper investigates emerging "vibe coding" practices in which designers use natural language and iterative dialogue with AI systems to produce design artefacts. Situating these practices within HCI and design theory frameworks, it examines how conversational AI tools transform the materiality of design work, reconfigure designer expertise, and introduce new forms of aesthetic negotiation between human intention and machine output.</div>
+            </div>
+            <div class="paper-row">
+              <button class="paper-toggle" aria-expanded="false" onclick="toggleAbs(this)">
+                <span class="paper-index">#4</span>
+                <span class="paper-inner">
+                  <span class="paper-title-text">Artistic Freedom in the Workflow Logic of Generative AI</span>
+                  <span class="paper-author-text">Freyja van den Boom · KdG Sint Lucas, Antwerp University</span>
+                </span>
+                <span class="paper-chevron">▼</span>
+              </button>
+              <div class="paper-abstract-body">This paper examines how the logic of generative AI tools — their affordances, default outputs, and embedded aesthetic preferences — shapes and constrains the artistic freedom of creators who use them. Focusing on educational contexts, it investigates how instructors and learners negotiate the tension between AI's workflow logic and their own artistic intentions, developing a conceptual framework for understanding freedom within constrained generative systems.</div>
+            </div>
+          </div>
         </div>
 
-        <h2 id="teaching">Teaching</h2>
-        <div class="content">
-            <div class="paper">
-                <h3 class="paper-title">Digital Society, Politics and Communication (2025)</h3>
-                <div class="paper-authors">Pompeu Fabra University (UPF)</div>
-                <div class="paper-meta">Master in Digital Culture and Emerging Media</div>
-                <div class="paper-description">
-                    Course on the interplay between technological change, digital media and contemporary societies, exploring new political communication, social media, digital identities and Artificial Intelligence.
-                </div>
+        <!-- PANEL B -->
+        <div class="panel-section">
+          <div class="panel-header hdr-b">
+            <div class="panel-letter-badge">B</div>
+            <div class="panel-hdr-text">
+              <div class="panel-time-line">13:30–14:50 CET &nbsp;·&nbsp; Chair: Claudio Celis Bueno (UvA)</div>
+              <div class="panel-title-line">Industry, Labour and Distributed Agencies</div>
             </div>
-
-            <div class="paper">
-                <h3 class="paper-title">Analysis of Messages (2025; 2026)</h3>
-                <div class="paper-authors">Pompeu Fabra University (UPF)</div>
-                <div class="paper-meta">Bachelor degree in Advertising and Public Relations</div>
-                <div class="paper-description">
-                    First year subject that introduces semiotics based on the exploration of the main analytical models of meaning generation and their application to different communication languages.
-                </div>
+          </div>
+          <div class="panel-papers-list">
+            <div class="paper-row">
+              <button class="paper-toggle" aria-expanded="false" onclick="toggleAbs(this)">
+                <span class="paper-index">#5</span>
+                <span class="paper-inner">
+                  <span class="paper-title-text">Anchored in the Loop: Professional Norms, Epistemic Labor, and Human–AI Workflow Integration in a Local Television Newsroom</span>
+                  <span class="paper-author-text">Divya S (Ph.D.), MD Main Uddin Rony (Ph.D.) · Bowling Green State University</span>
+                </span>
+                <span class="paper-chevron">▼</span>
+              </button>
+              <div class="paper-abstract-body">Based on ethnographic fieldwork in a local television newsroom, this paper examines how journalists negotiate the integration of AI tools into professional workflows. The analysis focuses on the epistemic labour involved in keeping humans "in the loop" — the cognitive, procedural, and social work of verifying, contextualising, and overriding AI outputs — and how this labour reconfigures professional norms, authority, and newsroom culture.</div>
             </div>
-
-            <div class="paper">
-                <h3 class="paper-title">Creation and Digital Authorship II (2024; 2025)</h3>
-                <div class="paper-authors">BAU, College of Arts and Design</div>
-                <div class="paper-meta">Bachelor degree in Design, mention in Audiovisual Design</div>
-                <div class="paper-description">
-                    Course focused on emerging formats and new technical approaches to audiovisual creation, involving interactive storytelling, co-creation with Generative AI and virtual reality.
-                </div>
+            <div class="paper-row">
+              <button class="paper-toggle" aria-expanded="false" onclick="toggleAbs(this)">
+                <span class="paper-index">#6</span>
+                <span class="paper-inner">
+                  <span class="paper-title-text">Automating the Automatable Web: Designers, Generative AI, and the Grammatisation of Web Design</span>
+                  <span class="paper-author-text">Dominik Vrabič Dežman · University of Amsterdam</span>
+                </span>
+                <span class="paper-chevron">▼</span>
+              </button>
+              <div class="paper-abstract-body">Drawing on Stiegler's concept of grammatisation, this paper analyses how generative AI tools are transforming web design workflows by formalising, standardising, and automating previously tacit design knowledge. Through interviews with professional web designers and analysis of AI-assisted design platforms, it maps how grammatisation redistributes creative agency, reshapes professional expertise, and raises new questions about aesthetic judgment in Human–AI collaborative workflows.</div>
             </div>
-
-            <div class="content">
-                <div class="paper">
-                    <h3 class="paper-title">Artificial Intelligence and Pedagogical Transformation in Higher Education (2024)</h3>
-                    <div class="paper-authors">EUSES | University School of Health and Sport in Catalonia</div>
-                    <div class="paper-meta">Internal teacher training course</div>
-                    <div class="paper-description">
-                        Theoretical and practical course on the implementation of AI in university teaching, focused on transdisciplinary approaches to teaching within AI Literacy competencies. The course offered participatory dynamics to contrast the expectations and opinions of the participating teachers with the possibilities and ethical considerations required by the implementation of AI in teaching.  
-                    </div>
-                </div>
-
-            <div class="paper">
-                <h3 class="paper-title">Final Degree Project Supervisor (2024)</h3>
-                <div class="paper-authors">BAU, College of Arts and Design</div>
-                <div class="paper-meta">Bachelor degree in Design, mention in Audiovisual Design</div>
-                <div class="paper-description">
-                    Supervisor of 8 Final Degree Projects within audiovisual experimentation and creation, including projects of AI-mediated advertising, speculative fiction for environmental awareness, documentary on local communities and an inmersive three level dystopian narrative, among others.
-                </div>
+            <div class="paper-row">
+              <button class="paper-toggle" aria-expanded="false" onclick="toggleAbs(this)">
+                <span class="paper-index">#7</span>
+                <span class="paper-inner">
+                  <span class="paper-title-text">Creative Workflows in the Making: Distributed Agency, Selection, and Evaluation in Italian Advertising Agencies</span>
+                  <span class="paper-author-text">Claudia Solinas · Sapienza, University of Rome</span>
+                </span>
+                <span class="paper-chevron">▼</span>
+              </button>
+              <div class="paper-abstract-body">This paper presents ethnographic research conducted within Italian advertising agencies adopting generative AI into their creative workflows. Focusing on the practices of selection and evaluation — the choices made between AI-generated and human-authored outputs — the study develops a framework of distributed agency to account for how creative decisions are co-produced across human and non-human actors.</div>
             </div>
+            <div class="paper-row">
+              <button class="paper-toggle" aria-expanded="false" onclick="toggleAbs(this)">
+                <span class="paper-index">#8</span>
+                <span class="paper-inner">
+                  <span class="paper-title-text">Distributed Agency and the Author Function: Negotiating Control in Human–AI Creative Writing</span>
+                  <span class="paper-author-text">Arushi Singh · Panjab University, Chandigarh</span>
+                </span>
+                <span class="paper-chevron">▼</span>
+              </button>
+              <div class="paper-abstract-body">Drawing on Foucault's author function and Actor-Network Theory, this paper examines how human writers negotiate authorship and creative control when co-writing with large language models. It maps the shifting distributions of agency in Human–AI co-authorship, exploring how writers assert, relinquish, and reclaim control across different stages of the writing process.</div>
+            </div>
+          </div>
         </div>
+
+        <!-- PANEL C -->
+        <div class="panel-section">
+          <div class="panel-header hdr-c">
+            <div class="panel-letter-badge">C</div>
+            <div class="panel-hdr-text">
+              <div class="panel-time-line">15:00–16:20 CET &nbsp;·&nbsp; Chair: Bertran Salvador-Mata (UPF)</div>
+              <div class="panel-title-line">Authorship, Resistance and Learning</div>
+            </div>
+          </div>
+          <div class="panel-papers-list">
+            <div class="paper-row">
+              <button class="paper-toggle" aria-expanded="false" onclick="toggleAbs(this)">
+                <span class="paper-index">#9</span>
+                <span class="paper-inner">
+                  <span class="paper-title-text">Impact of AI on Creative Media (Filmmaking) Education and Production/Practice</span>
+                  <span class="paper-author-text">Nana Ofori-Atta · Bournemouth University</span>
+                </span>
+                <span class="paper-chevron">▼</span>
+              </button>
+              <div class="paper-abstract-body">This paper investigates how the integration of generative AI into filmmaking education and professional practice is reshaping pedagogical frameworks, creative curricula, and the skill sets expected of emerging media professionals. Drawing on empirical research with educators and students, it addresses questions of AI literacy, the renegotiation of authorship in student work, and the broader ethical implications of AI-assisted filmmaking within educational institutions.</div>
+            </div>
+            <div class="paper-row">
+              <button class="paper-toggle" aria-expanded="false" onclick="toggleAbs(this)">
+                <span class="paper-index">#10</span>
+                <span class="paper-inner">
+                  <span class="paper-title-text">From Signal to Process: Respiration and Individuation in Human–AI Film Workflows</span>
+                  <span class="paper-author-text">Lisa Müller-Trede · University of Southern California</span>
+                </span>
+                <span class="paper-chevron">▼</span>
+              </button>
+              <div class="paper-abstract-body">Bringing together Simondon's philosophy of individuation and embodied approaches to creative practice, this paper examines how biometric data—specifically respiratory signal—can serve as an interface for Human–AI collaboration in film workflows. It explores how physiological feedback loops generate dynamic, process-oriented creative methods that challenge linear models of production and open space for emergent forms of meaning-making in cinema.</div>
+            </div>
+            <div class="paper-row">
+              <button class="paper-toggle" aria-expanded="false" onclick="toggleAbs(this)">
+                <span class="paper-index">#11</span>
+                <span class="paper-inner">
+                  <span class="paper-title-text">Below the Surface of Refusal: Negotiating Generative AI in the Canadian Screen Industries</span>
+                  <span class="paper-author-text">Daphne Rena Idiz · University of Toronto</span>
+                </span>
+                <span class="paper-chevron">▼</span>
+              </button>
+              <div class="paper-abstract-body">This paper examines the complex and often contradictory responses of workers in the Canadian screen industries to the adoption of generative AI. Moving beyond binary framings of acceptance or resistance, the study reveals a nuanced landscape of negotiation, tactical non-adoption, workarounds, and selective use. It theorises "refusal" as a multivalent creative and political strategy within changing labour conditions.</div>
+            </div>
+            <div class="paper-row">
+              <button class="paper-toggle" aria-expanded="false" onclick="toggleAbs(this)">
+                <span class="paper-index">#12</span>
+                <span class="paper-inner">
+                  <span class="paper-title-text">Authorship and Creativity in AI-Generated Photo-Based Images</span>
+                  <span class="paper-author-text">Zsolt Batori · University of Pécs</span>
+                </span>
+                <span class="paper-chevron">▼</span>
+              </button>
+              <div class="paper-abstract-body">This paper interrogates traditional concepts of photographic authorship in light of AI image generation tools. Drawing on philosophy of photography and aesthetics, it examines what it means to be the author of a photo-based image when produced through textual prompting, iterative refinement, and model outputs. It argues for a reconceptualisation of photographic creativity that accounts for the distributed, procedural, and collaborative dimensions of Human–AI image-making workflows.</div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <hr class="section-divider" />
+
+      <!-- ── COMMITTEE ── -->
+      <section id="committee" class="committee">
+        <h2>Organizing Committee</h2>
+        <div class="grid">
+          <div class="card">
+            <a href="https://www.linkedin.com/in/valverdevalencia/" target="_blank" rel="noopener noreferrer">
+              <img class="member-photo" src="Fotos commitee/Àlex.webp" alt="Àlex Valverde-Valencia" />
+            </a>
+            <h3>Àlex Valverde-Valencia</h3>
+            <p>Pompeu Fabra University (Barcelona)</p>
+          </div>
+          <div class="card">
+            <a href="https://www.linkedin.com/in/szilvia-ruszev-ab9505a/" target="_blank" rel="noopener noreferrer">
+              <img class="member-photo" src="Fotos commitee/Ruszev.jpg" alt="Szilvia Ruszev" />
+            </a>
+            <h3>Szilvia Ruszev</h3>
+            <p>University College London</p>
+          </div>
+          <div class="card">
+            <a href="https://www.linkedin.com/in/frederic-guerrero-sol%C3%A9-83007714/" target="_blank" rel="noopener noreferrer">
+              <img class="member-photo" src="Fotos commitee/Frederic.png" alt="Frederic Guerrero-Solé" />
+            </a>
+            <h3>Frederic Guerrero-Solé</h3>
+            <p>Pompeu Fabra University (Barcelona)</p>
+          </div>
+          <div class="card">
+            <img class="member-photo" src="Fotos commitee/Claudio.jpg" alt="Claudio Celis Bueno" />
+            <h3>Claudio Celis Bueno</h3>
+            <p>University of Amsterdam</p>
+          </div>
+          <div class="card">
+            <a href="https://www.linkedin.com/in/bertran-salvador/" target="_blank" rel="noopener noreferrer">
+              <img class="member-photo" src="Fotos commitee/Bertran.jpg" alt="Bertran Salvador-Mata" />
+            </a>
+            <h3>Bertran Salvador-Mata</h3>
+            <p>Pompeu Fabra University (Barcelona)</p>
+          </div>
+        </div>
+      </section>
+
+      <hr class="section-divider" />
+
+      <!-- ── CONTACT ── -->
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>For more information or certificates of participation, please contact <a href="mailto:alex.valverde@upf.edu">alex.valverde@upf.edu</a></p>
+        <p class="muted" style="font-size:0.9rem;margin-top:6px">Organized by Pompeu Fabra University (Barcelona) · University College London · University of Amsterdam</p>
+        <div class="cta-wrap" style="margin-top:16px">
+          <a class="cta" href="https://forms.gle/VHatEC32gzyHnidT7" target="_blank" rel="noopener noreferrer">Register for Free</a>
+        </div>
+      </section>
+
+      <hr class="section-divider" />
+
+
     </main>
-</body>
-</html> 
+
+    <footer>© 2026 Human-AI Creative Workflows Symposium</footer>
+
+    <script>
+      // Scroll progress bar
+      const bar = document.getElementById('scroll-progress');
+      window.addEventListener('scroll', () => {
+        const total = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (total > 0 ? (window.scrollY / total) * 100 : 0) + '%';
+      }, { passive: true });
+
+      // Countdown to June 1 2026 11:15 CET
+      function tick() {
+        const diff = new Date('2026-06-01T11:15:00+02:00').getTime() - Date.now();
+        if (diff <= 0) {
+          ['cd-d','cd-h','cd-m','cd-s'].forEach(id => document.getElementById(id).textContent = '0');
+          return;
+        }
+        document.getElementById('cd-d').textContent = Math.floor(diff/86400000);
+        document.getElementById('cd-h').textContent = String(Math.floor((diff%86400000)/3600000)).padStart(2,'0');
+        document.getElementById('cd-m').textContent = String(Math.floor((diff%3600000)/60000)).padStart(2,'0');
+        document.getElementById('cd-s').textContent = String(Math.floor((diff%60000)/1000)).padStart(2,'0');
+      }
+      tick(); setInterval(tick, 1000);
+
+      // Toggle abstracts
+      function toggleAbs(btn) {
+        const open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!open));
+        btn.nextElementSibling.classList.toggle('open', !open);
+      }
+    </script>
+  </body>
+</html>
