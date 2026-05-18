@@ -1,545 +1,140 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Call For Papers - International Symposium | Human-AI creative workflows: Education, Labour and Creativity</title>
-    <meta
-      name="description"
-      content="Call For Papers for the International Symposium on Human-AI creative workflows: Education, Labour and Creativity."
-    />
-    <link rel="icon" type="image/png" sizes="32x32" href="Favicon/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="Favicon/favicon-16x16.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="Favicon/apple-touch-icon.png" />
-    <link rel="manifest" href="Favicon/site.webmanifest" />
-    <style>
-      :root {
-        color-scheme: light;
-        --bg: #0f172a;
-        --card: #ffffff;
-        --text: #0b0b0b;
-        --muted: #5b5b5b;
-        --accent: #e21f79;
-        --accent-2: #5624c5;
-        --accent-3: #ce18bc;
-        --accent-soft: #ff8c8c;
-        --border: #e5e7eb;
-      }
-      * {
-        box-sizing: border-box;
-      }
-      body {
-        margin: 0;
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        color: var(--text);
-        background: #f8fafc;
-        line-height: 1.5;
-      }
-      h1,
-      h2,
-      h3 {
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        letter-spacing: 0.01em;
-      }
-      a {
-        color: var(--accent);
-        text-decoration: none;
-      }
-      a:hover {
-        text-decoration: underline;
-      }
-      header {
-        padding: 32px 20px 18px;
-        background: #ffffff;
-      }
-      header .wrap {
-        max-width: 980px;
-        margin: 0 auto;
-      }
-      .hero {
-        max-width: 980px;
-        margin: 0 auto;
-      }
-      .hero img {
-        width: 100%;
-        height: auto;
-        display: block;
-        border-radius: 14px;
-        border: 1px solid var(--border);
-        box-shadow: 0 12px 28px rgba(15, 23, 42, 0.14);
-      }
-      nav {
-        background: #ffffff;
-        border-bottom: 1px solid var(--border);
-        box-shadow: 0 4px 10px rgba(15, 23, 42, 0.08);
-        position: sticky;
-        top: 0;
-        z-index: 20;
-      }
-      nav .wrap {
-        max-width: 980px;
-        margin: 0 auto;
-        padding: 14px 20px;
-        display: flex;
-        gap: 24px;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      nav a {
-        color: var(--accent-2);
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
-        font-size: 0.85rem;
-        padding: 6px 4px;
-      }
-      nav a:hover {
-        color: var(--accent);
-        text-decoration: none;
-      }
-      @media (max-width: 600px) {
-        nav {
-          position: static;
-        }
-        nav .wrap {
-          padding: 8px 14px;
-          gap: 12px;
-        }
-        nav a {
-          font-size: 0.75rem;
-          letter-spacing: 0.06em;
-          padding: 4px 2px;
-        }
-      }
-      .cta {
-        display: inline-block;
-        background: var(--accent-2);
-        color: #ffffff;
-        padding: 14px 28px;
-        border-radius: 6px;
-        font-weight: 700;
-        font-size: 1.12rem;
-        border: 1px solid transparent;
-      }
-      .cta-wrap {
-        text-align: center;
-        margin-top: 16px;
-      }
-      main {
-        max-width: 980px;
-        margin: 0 auto;
-        padding: 32px 20px 48px;
-      }
-      section {
-        margin-bottom: 28px;
-        padding-top: 18px;
-        border-top: 1px solid var(--border);
-      }
-      .section-divider {
-        height: 1px;
-        background: var(--border);
-        border: 0;
-        margin: 28px 0;
-      }
-      section:first-of-type {
-        border-top: 0;
-        padding-top: 0;
-      }
-      h2 {
-        margin: 0 0 10px;
-        font-size: 1.4rem;
-        color: var(--accent);
-      }
-      .grid {
-        display: grid;
-        gap: 16px;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      }
-      .committee {
-        background: rgba(255, 140, 140, 0.18);
-        border: 1px solid rgba(255, 140, 140, 0.3);
-        border-radius: 14px;
-        padding: 18px;
-      }
-      .committee .grid {
-        grid-template-columns: repeat(5, minmax(0, 1fr));
-        gap: 12px;
-      }
-      .committee .card {
-        background: #ffffff;
-        border-color: rgba(0, 0, 0, 0.08);
-        padding: 12px;
-      }
-      .committee .card h3 {
-        margin: 0 0 6px;
-        font-size: 1rem;
-      }
-      .committee .card p {
-        margin: 0;
-        font-size: 0.95rem;
-      }
-      @media (max-width: 900px) {
-        .committee .grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-      }
-      @media (max-width: 600px) {
-        .committee .grid {
-          grid-template-columns: 1fr;
-        }
-        .committee .card {
-          text-align: center;
-        }
-        .member-photo {
-          max-width: 220px;
-          margin: 0 auto 10px;
-        }
-      }
-      .member-photo {
-        width: 100%;
-        aspect-ratio: 1 / 1;
-        object-fit: cover;
-        border-radius: 10px;
-        border: 1px solid rgba(0, 0, 0, 0.08);
-        margin-bottom: 8px;
-      }
-      .card {
-        background: var(--card);
-        border: 1px solid var(--border);
-        border-radius: 10px;
-        padding: 16px;
-        box-shadow: 0 6px 16px rgba(15, 23, 42, 0.06);
-      }
-      .tag {
-        display: inline-block;
-        font-size: 1.05rem;
-        color: #ffffff;
-        background: var(--accent);
-        padding: 9px 18px;
-        border-radius: 16px;
-        margin-right: 8px;
-        margin-bottom: 8px;
-      }
-      .agenda li {
-        margin-bottom: 8px;
-      }
-      .references {
-        font-size: 0.95rem;
-        line-height: 1.4;
-      }
-      .references li {
-        margin-bottom: 6px;
-      }
-      .key-dates {
-        background: #f4f1ff;
-        border: 1px solid #e2dcff;
-        border-radius: 10px;
-        padding: 12px 14px;
-        margin: 10px 0 6px;
-        text-align: left;
-      }
-      .muted {
-        color: var(--muted);
-      }
-      .highlight {
-        font-weight: 700;
-        font-size: 1.1rem;
-        color: var(--text);
-      }
-      footer {
-        border-top: 1px solid var(--border);
-        padding: 18px 20px 32px;
-        text-align: center;
-        color: var(--muted);
-        font-size: 0.9rem;
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <div class="hero">
-        <img
-          src="Foto banner/Banner.png?v=2"
-          alt="International Symposium on Human-AI Workflows banner"
-        />
-      </div>
-    </header>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    
+    <!-- SEO Meta Tags -->
+    <title>Àlex Valverde Valencia</title>
+    <meta name="description" content="Àlex Valverde Valencia - PhD candidate at UPF, researching Human-AI creative processes AI Literacy.">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Àlex Valverde Valencia">
+    <meta property="og:description" content="PhD candidate at UPF, researching Human-AI creative processes and AI Literacy. ">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://valvevalen.github.io">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Àlex Valverde Valencia">
 
-    <nav>
-      <div class="wrap">
-        <a href="#home">CFP</a>
-        <a href="#registration">Registration</a>
-        <a href="#committee">Organizing Committee</a>
-        <a href="#programme">Programme</a>
-        <a href="#contact">Contact</a>
-      </div>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="nav-menu">
+        <a href="#research">Research</a>
+        <a href="#teaching">Teaching</a>
     </nav>
-
     <main>
-      <section id="home">
-        <span class="tag">Call for Papers</span>
-        <p class="muted highlight">
-          International Online Symposium on Human-AI Creative Workflows (1st of
-          June 2026)
-        </p>
-        <p>
-          The growing complexity arising from the integration of Generative
-          Artificial Intelligence (GenAI) into creative practices requires
-          equally complex theoretical, conceptual, and methodological approaches
-          across different disciplines and fields of research (Ruszev et al.
-          2025). Likewise, the functionalities of the new generative models, its
-          multi-level adoption, and the expanding range of uses, establish a
-          paradigm that goes beyond the generation of isolated outputs towards
-          <strong>a complete reconfiguration of creative workflows</strong>
-          (Santoso & Wijayanti,
-          2024; Valverde-Valencia, 2025).
-        </p>
-        <p>
-          In this context, the notion of workflow seems to call for a renewed
-          approach, distinct from more traditional uses and definitions.
-          Traditionally envisioned as a sequential organization to complete any
-          type of work (Oxford UP; Cambridge UP), the concept has been expanded
-          to accommodate <strong>the complexity of human-technology relationships</strong> within
-          production processes, focusing on the design, coordination and
-          adaptation of work processes through and with technology (Nicoll and
-          Keogh, 2019). The emergence of Generative AI and its integration into
-          creative practices requires a further expansion of this concept to
-          encompass notions such as distributed agency (Celis Bueno et al. 2024)
-          or Human-AI collaboration (Geroimenko, 2025), which frame these
-          processes not as sequential but as dynamic and co-evolutionary
-          (Moruzzi, 2023). Therefore, Human-AI creative workflows can be
-          understood as an entanglement of relationships between actors,
-          practices, and artifacts that includes mutual learning, feedback
-          loops, iteration, strategies and social, ethical, and labour
-          implications. <em>However, this renewed interest in the concept of
-          workflow also raises new questions: How is learning organized and
-          performed in these iterative processes? How do the stages of creative
-          work adapt when Generative AI plays a role in the process? How can the
-          labour implications of these changes be addressed? How do we negotiate
-          value and authenticity when creative agency is distributed? How can we
-          redefine and reimagine the concept of workflows? And conversely, how
-          this might change our understanding of creativity?</em>
-        </p>
-        <p>
-          Considering these questions and the challenges posed by Generative AI
-          in creative fields, <strong>this International Online Symposium on Human-AI Creative Workflows</strong>
-          aims to bring together scholars, professionals and
-          creative practitioners who are embracing complex approaches to the
-          study of these topics. More specifically, we invite proposals that
-          address, but are not limited to, the professional fields such as the
-          Audiovisual Industry, Visual Arts, Videogames, Journalism, Music or
-          Advertising while connecting with the following lines of interest:
-        </p>
-        <ul class="agenda">
-          <li>
-            <strong>Educational approaches:</strong> Teaching-learning
-            processes, contexts and strategies in Human-AI Creation and the
-            role of AI Literacy.
-          </li>
-          <li>
-            <strong>The political economy of Human-AI workflows:</strong>
-            monopolisation of workflows (Young et al. 2025), Human-AI
-            co-creation from the perspective of labour, shifts in industry
-            dynamics, business models, and labour conditions.
-          </li>
-          <li>
-            <strong>Agency and Authorship:</strong> How is the authorship framed
-            in Human-AI Creativity? Negotiations of control and autonomy in
-            collaborative workflows.
-          </li>
-          <li>
-            <strong>Conceptual contributions:</strong> How to redefine the
-            concept of workflow?; which novel theoretical frameworks can we
-            deploy to examine this phenomenon?
-          </li>
-          <li>
-            <strong>Case studies:</strong> Case studies on GenAI implementation
-            in studios, newsrooms, agencies... Resistance, workarounds, and/or
-            adoption patterns.
-          </li>
-        </ul>
-        <div class="cta-wrap">
-          <a class="cta" href="https://forms.gle/No7i3g8ixnebgWZJ9" target="_blank" rel="noopener noreferrer">Submit your abstract</a>
+        <h1>Àlex Valverde Valencia</h1>
+        <div class="profile">
+            <div class="bio">
+                <p>PhD Researcher on Human-AI creative processes and AI Literacy at UPF's Communication Department. Professor on Semiotics, Digital Society and Audiovisual Creation with Generative AI. Trainer on superior teaching and learning innovation. Former coordinator of the <a href="https://www.upf.edu/web/rainfilmfest" target="_blank" rel="noopener noreferrer">+RAIN Film Festival</a>, the first AI film festival in Europe.</p>
+                <p>High performance athlete running 400m and 400m hurdles.</p>
+                <p>Barcelona based.</p>
+            </div>
+            <img src="img/profile.webp" alt="Foto de perfil" class="profile-img circular-image">
         </div>
-      </section>
-
-      <section id="registration">
-        <h2>Registration</h2>
-        <div class="card">
-          <p>
-            <strong>Format:</strong> 100% Online (Synchronous). A link will be
-            provided before the symposium.
-          </p>
-          <p>
-            <strong>Cost:</strong> The attendance and participation to the
-            symposium is <strong>free of charge</strong>. Registration is required.
-          </p>
-          <p>
-            <strong>Certification:</strong> The organizing committee of the
-            symposium can provide a certificate of participation and attendance
-            if needed.
-          </p>
-          <p>
-            <strong>Submission Details:</strong> We welcome submissions from
-            diverse disciplines, including but not limited to communication,
-            media studies, computer science, (digital) humanities, social
-            sciences and the arts. Submissions should delve deep into critical
-            insights, conceptual and theoretical frameworks, empirical research,
-            or innovative methodologies aligned with the conference themes.
-          </p>
-          <p><strong>Abstract length:</strong> 300-500 words, excluding references.</p>
-          <p><strong>Bio:</strong> Brief author biography, max. 100 words.</p>
-          <p><strong>Language:</strong> Proposals have to be submitted in English.</p>
-          <div class="key-dates">
-            <p><strong>Key dates</strong></p>
-            <ul class="agenda">
-            <li><strong>Abstract submission deadline:</strong> 1st of April, 2026</li>
-            <li><strong>Notification of acceptance:</strong> 2nd of May, 2026</li>
-            <li><strong>Conference date:</strong> 1st of June, 2026</li>
-            </ul>
-          </div>
-          <p>
-            <a href="https://forms.gle/No7i3g8ixnebgWZJ9" target="_blank" rel="noopener noreferrer">Registration form</a>
-          </p>
+        
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/valverdevalencia/" target="_blank" rel="noopener noreferrer">LinkedIn</a> /
+            <a href="https://x.com/valvevalen" target="_blank" rel="noopener noreferrer">Twitter/X</a> /
+            <a href="https://scholar.google.com/citations?hl=ca&user=aWdKfpoAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a> /
+            <a href="mailto:alex.valverde@upf.edu">Email</a>
         </div>
-      </section>
 
-      <hr class="section-divider" />
+        <h2 id="research">Research</h2>
+        <div class="content">
+            <div class="paper">
+                <h3 class="paper-title">
+                    <span class="tag-new">[NEW]</span> <a href="https://raco.cat/index.php/Hipertext/article/view/9800248" target="_blank" rel="noopener noreferrer">Introducing the concept of relational processes in Human-AI creativity</a>
+                </h3>
+                <div class="paper-authors">Àlex Valverde-Valencia</div>
+                <div class="paper-meta">Hipertext.net, n.31, 2025</div>
+                <div class="paper-description">
+                    Theoretical contribution conceptualizing relational processes in creativity as mutual influence processes in which Human and AI actors collaborate iteratively, sharing their agency and reciprocally modeling their behavior, knowledge structures, and affective responses.
+                </div>
+            </div>
 
-      <section id="committee" class="committee">
-        <h2>Organizing Committee</h2>
-        <div class="grid">
-          <div class="card">
-            <a href="https://www.linkedin.com/in/valverdevalencia/" target="_blank" rel="noopener noreferrer">
-              <img
-                class="member-photo"
-                src="Fotos commitee/Àlex.webp"
-                alt="Àlex Valverde-Valencia"
-              />
-            </a>
-            <h3>Àlex Valverde-Valencia</h3>
-            <p>Pompeu Fabra University (Barcelona)</p>
-          </div>
-          <div class="card">
-            <a href="https://www.linkedin.com/in/szilvia-ruszev-ab9505a/" target="_blank" rel="noopener noreferrer">
-              <img
-                class="member-photo"
-                src="Fotos commitee/Ruszev.jpg"
-                alt="Szilvia Ruszev"
-              />
-            </a>
-            <h3>Szilvia Ruszev</h3>
-            <p>University College of London</p>
-          </div>
-          <div class="card">
-            <a href="https://www.linkedin.com/in/frederic-guerrero-sol%C3%A9-83007714/" target="_blank" rel="noopener noreferrer">
-              <img
-                class="member-photo"
-                src="Fotos commitee/Frederic.png"
-                alt="Frederic Guerrero-Solé"
-              />
-            </a>
-            <h3>Frederic Guerrero-Solé</h3>
-            <p>Pompeu Fabra University (Barcelona)</p>
-          </div>
-          <div class="card">
-            <img
-              class="member-photo"
-              src="Fotos commitee/Claudio.jpg"
-              alt="Claudio Celis Bueno"
-            />
-            <h3>Claudio Celis Bueno</h3>
-            <p>University of Amsterdam</p>
-          </div>
-          <div class="card">
-            <a href="https://www.linkedin.com/in/bertran-salvador/" target="_blank" rel="noopener noreferrer">
-              <img
-                class="member-photo"
-                src="Fotos commitee/Bertran.jpg"
-                alt="Bertran Salvador-Mata"
-              />
-            </a>
-            <h3>Bertran Salvador-Mata</h3>
-            <p>Pompeu Fabra University (Barcelona)</p>
-          </div>
+            <div class="paper">
+                <h3 class="paper-title">
+                    <a href="https://www.editorialuoc.com/la-democracia-en-riesgo" target="_blank" rel="noopener noreferrer">Extrema derecha, deepfakes y (fan)propaganda memética generada con Inteligencia Artificial</a>
+                </h3>
+                <div class="paper-authors">Àlex Valverde-Valencia, Frederic Guerrero-Solé y Mar Guerrero-Pico</div>
+                <div class="paper-meta">La democracia en riesgo ¿Internet e IA al servicio de los populismos? Eds. Frederic Guerrero-Solé y Laura Pérez-Altable. Editorial UOC, 2025</div>
+                <div class="paper-description">
+                    Book chapter exploring the use of Generative AI by right wing populism in Spain and the sociopolitical implications of this use in terms of audience participation and extremist ideological dissemination.
+                </div>
+            </div>
+
+            <div class="paper">
+                <h3 class="paper-title">
+                    <a href="https://www.raco.cat/index.php/Hipertext/article/view/413229" target="_blank" rel="noopener noreferrer">Self-effects in AI-mediated communication</a>
+                </h3>
+                <div class="paper-authors">Àlex Valverde Valencia</div>
+                <div class="paper-meta">Hipertext.net, n.26, 2023</div>
+                <div class="paper-description">
+                    A first conceptualization of the possible cognitive, emotional and behavioral self-effects that messages have on the senders themselves in the context of AI-mediated communication, with implications for digital well-being.
+                </div>
+            </div>
         </div>
-      </section>
 
-      <section id="programme">
-        <h2>Programme</h2>
-        <p class="muted">To be announced.</p>
-      </section>
+        <h2 id="teaching">Teaching</h2>
+        <div class="content">
+            <div class="paper">
+                <h3 class="paper-title">Digital Society, Politics and Communication (2025)</h3>
+                <div class="paper-authors">Pompeu Fabra University (UPF)</div>
+                <div class="paper-meta">Master in Digital Culture and Emerging Media</div>
+                <div class="paper-description">
+                    Course on the interplay between technological change, digital media and contemporary societies, exploring new political communication, social media, digital identities and Artificial Intelligence.
+                </div>
+            </div>
 
-      <section id="contact">
-        <h2>Contact</h2>
-        <p>
-          For more information, or if you encounter any problems with the
-          submission form, please contact
-          <a href="mailto:alex.valverde@upf.edu">alex.valverde@upf.edu</a>
-        </p>
-      </section>
+            <div class="paper">
+                <h3 class="paper-title">Analysis of Messages (2025; 2026)</h3>
+                <div class="paper-authors">Pompeu Fabra University (UPF)</div>
+                <div class="paper-meta">Bachelor degree in Advertising and Public Relations</div>
+                <div class="paper-description">
+                    First year subject that introduces semiotics based on the exploration of the main analytical models of meaning generation and their application to different communication languages.
+                </div>
+            </div>
 
-      <section id="references">
-        <h2>References</h2>
-        <ul class="agenda references">
-          <li>
-            Cambridge University Press. (n.d.). Workflow, n. In Cambridge
-            Dictionary. Retrieved January 20, 2026, from
-            <a href="https://dictionary.cambridge.org/dictionary/english/workflow">https://dictionary.cambridge.org/dictionary/english/workflow</a>
-          </li>
-          <li>
-            Claudio Celis Bueno, Pei-Sze Chow, & Ada Popowicz. (2024). Not
-            ‘what’, but ‘where is creativity?’: Towards a relational-materialist
-            approach to generative AI. AI & Society.
-            <a href="https://doi.org/10.1007/s00146-024-01921-3">https://doi.org/10.1007/s00146-024-01921-3</a>
-          </li>
-          <li>
-            Geroimenko, V. (2025). Generative AI: From human–computer interaction
-            to human–computer creativity. In Human-computer creativity:
-            Generative AI in education, art, and healthcare (pp. 3–29). Springer
-            Nature Switzerland.
-          </li>
-          <li>
-            Moruzzi, C. (2023). Creative agents: Rethinking agency and creativity
-            in human and artificial systems. Journal of Aesthetics and
-            Phenomenology, 9(2), 245–268.
-          </li>
-          <li>
-            Nicoll, B., & Keogh, B. (2019). The Unity game engine and the
-            circuits of cultural software. In The Unity game engine and the
-            circuits of cultural software (pp. 1–21). Springer International
-            Publishing.
-          </li>
-          <li>
-            Oxford University Press. (n.d.). Workflow, n. In Oxford English
-            Dictionary. Retrieved January 20, 2026, from
-            <a href="https://doi.org/10.1093/OED/2899020370">https://doi.org/10.1093/OED/2899020370</a>
-          </li>
-          <li>
-            Ruszev, S., Trifonova, T., & Guerrero-Solé, F. (2025). Authorship and
-            creativity in the era of AI: Towards a transformation of
-            contemporary media narratives. Hipertext.net, (31), 1–10.
-          </li>
-          <li>
-            Santoso, B., & Wijayanti, R. (2024). Human–AI collaboration in
-            creative industries: Workflows in media production and
-            community-driven platforms. Transactions on Artificial
-            Intelligence, Machine Learning, and Cognitive Systems, 9(11), 11–26.
-          </li>
-          <li>
-            Valverde-Valencia, À. (2025). Introducing the concept of relational
-            processes in human–AI creativity. Hipertext.net, (31), 55–66.
-          </li>
-          <li>
-            Young, C., Joseph, D., & Nieborg, D. (2025). Workflow monopolies: A
-            platform historiography of Unity in the immersive app economy.
-            Platforms & Society.
-            <a href="https://doi.org/10.1177/29768624251376562">https://doi.org/10.1177/29768624251376562</a>
-          </li>
-        </ul>
-      </section>
+            <div class="paper">
+                <h3 class="paper-title">Creation and Digital Authorship II (2024; 2025)</h3>
+                <div class="paper-authors">BAU, College of Arts and Design</div>
+                <div class="paper-meta">Bachelor degree in Design, mention in Audiovisual Design</div>
+                <div class="paper-description">
+                    Course focused on emerging formats and new technical approaches to audiovisual creation, involving interactive storytelling, co-creation with Generative AI and virtual reality.
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="paper">
+                    <h3 class="paper-title">Artificial Intelligence and Pedagogical Transformation in Higher Education (2024)</h3>
+                    <div class="paper-authors">EUSES | University School of Health and Sport in Catalonia</div>
+                    <div class="paper-meta">Internal teacher training course</div>
+                    <div class="paper-description">
+                        Theoretical and practical course on the implementation of AI in university teaching, focused on transdisciplinary approaches to teaching within AI Literacy competencies. The course offered participatory dynamics to contrast the expectations and opinions of the participating teachers with the possibilities and ethical considerations required by the implementation of AI in teaching.  
+                    </div>
+                </div>
+
+            <div class="paper">
+                <h3 class="paper-title">Final Degree Project Supervisor (2024)</h3>
+                <div class="paper-authors">BAU, College of Arts and Design</div>
+                <div class="paper-meta">Bachelor degree in Design, mention in Audiovisual Design</div>
+                <div class="paper-description">
+                    Supervisor of 8 Final Degree Projects within audiovisual experimentation and creation, including projects of AI-mediated advertising, speculative fiction for environmental awareness, documentary on local communities and an inmersive three level dystopian narrative, among others.
+                </div>
+            </div>
+        </div>
     </main>
-
-    <footer>© 2026 Human-AI Creative Workflows</footer>
-  </body>
-</html>
+</body>
+</html> 
