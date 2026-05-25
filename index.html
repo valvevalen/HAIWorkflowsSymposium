@@ -238,6 +238,17 @@
       .committee .card p { margin: 0; font-size: 0.9rem; color: var(--muted); }
       .member-photo { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 10px; border: 1px solid rgba(0,0,0,0.08); margin-bottom: 8px; }
 
+      /* ── Workflow map ── */
+      .workflow-map-section {
+        width: min(calc(100vw - 40px), 1500px);
+        margin-left: 50%; transform: translateX(-50%);
+      }
+      .workflow-map-frame {
+        width: 100%; height: 880px; display: block;
+        border: 1px solid var(--border); border-radius: 14px;
+        background: #f4f2fa; box-shadow: 0 12px 28px rgba(15,23,42,0.10);
+      }
+
       /* ── Misc ── */
       .muted { color: var(--muted); }
       .references { font-size: 0.9rem; line-height: 1.5; }
@@ -268,6 +279,8 @@
         .paper-abstract-body { padding: 0 14px 12px 36px; }
         .cd-num { font-size: 1.7rem; }
         .cd-unit { min-width: 46px; }
+        .workflow-map-section { width: 100%; transform: none; margin-left: 0; }
+        .workflow-map-frame { height: 980px; }
       }
     </style>
   </head>
@@ -287,6 +300,7 @@
         <a href="#about">About</a>
         <a href="#programme">Programme</a>
         <a href="#committee">Committee</a>
+        <a href="#workflow-map">Map</a>
         <a href="#contact">Contact</a>
       </div>
     </nav>
@@ -568,7 +582,15 @@
         </div>
       </section>
 
-      <hr class="section-divider" />
+      <!-- ── WORKFLOW MAP ── -->
+      <section id="workflow-map" class="workflow-map-section">
+        <iframe
+          class="workflow-map-frame"
+          src="Diffusion%20Materials/Symposium_Global_Map_Interactive.html"
+          title="Interactive map showing the workflow behind the symposium"
+          loading="lazy">
+        </iframe>
+      </section>
 
       <!-- ── CONTACT ── -->
       <section id="contact">
@@ -579,8 +601,6 @@
           <a class="cta" href="https://forms.gle/VHatEC32gzyHnidT7" target="_blank" rel="noopener noreferrer">Register for Free</a>
         </div>
       </section>
-
-      <hr class="section-divider" />
 
 
     </main>
